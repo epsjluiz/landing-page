@@ -1,0 +1,193 @@
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #4ecdc4;
+    --text-color: #2d3436;
+    --background-color: #f9f9f9;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    display: grid;
+    grid-template-columns: 1fr minmax(auto, 1200px) 1fr;
+    min-height: 100vh;
+}
+
+.content-wrapper {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    gap: 2rem;
+}
+
+/* Header Styles */
+.header {
+    width: 100%;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.nav-menu {
+    display: none;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.nav-menu ul li {
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    padding: 0.5rem 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-menu ul li:hover {
+    color: var(--secondary-color);
+}
+
+.header-content {
+    text-align: center;
+    padding: 3rem 2rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.hero-image {
+    flex: 1;
+    padding: 1rem 0;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.flag {
+    margin-top: 1rem;
+}
+
+.flag img {
+    width: 50px;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Footer Styles */
+.footer {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+                url('images/coliseu.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    margin-top: auto;
+    width: 100%;
+    height: 200px; /* Dobro da altura original */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-content {
+    text-align: center;
+}
+
+.footer-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-flag {
+    width: 30px;
+    height: auto;
+    border-radius: 4px;
+}
+
+.social-links {
+    display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        grid-template-columns: 1rem 1fr 1rem;
+        padding-bottom: 150px; /* Mais espaço para o footer em telas pequenas */
+    }
+    
+    .nav-menu ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .footer {
+        height: 150px; /* Altura menor em telas pequenas */
+        border-radius: 0;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        align-items: center;
+    }
+
+    .footer-info {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 1rem;
+    }
+}
+
+.recipe-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin: 2rem 0;
+    transition: all 0.3s ease;
+}
+
+.recipe-content h2 {
+    color: var(--primary-color);
+    margin: 1.5rem 0;
+}
+
+.recipe-content ul,
+.recipe-content ol {
+    padding-left: 2rem;
+    margin-bottom: 2rem;
+}
+
+.recipe-content li {
+    margin-bottom: 0.5rem;
+}
+
+/* Remover classes não utilizadas */
+.read-more-btn, .hidden {
+    display: none;
+}
